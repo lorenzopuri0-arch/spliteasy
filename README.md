@@ -1,0 +1,2 @@
+# spliteasy
+Progetto SplitEasy
