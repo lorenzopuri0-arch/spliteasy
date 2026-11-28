@@ -1,0 +1,25 @@
+@base = http://localhost:3000
+
+### Registrazione
+POST {{base}}/auth/register
+Content-Type: application/json
+
+{ "email": "marco@example.com", "name": "Marco", "password": "password123" }
+
+### Login
+# @name login
+POST {{base}}/auth/login
+Content-Type: application/json
+
+{ "email": "marco@example.com", "password": "password123" }
+
+### Crea gruppo
+POST {{base}}/groups
+Authorization: Bearer {{login.response.body.token}}
+Content-Type: application/json
+
+{ "name": "Weekend al mare" }
+
+### Elenco gruppi
+GET {{base}}/groups
+Authorization: Bearer {{login.response.body.token}}
